@@ -39,10 +39,10 @@
 
 <%= form_for(@book) do |f| %>
 
-<h1 class="book_title">Title</h1>
-<%= f.text_field :title  %>
-<h1 class="book_body">Body</h1>
-<%= f.text_area :body  %>
+<h1>Title</h1>
+<%= f.text_field :title, class:"book_title"  %>
+<h1>Body</h1>
+<%= f.text_area :body, class:"book_body" %>
 
 <%= f.submit "Creat Book" %>
 
