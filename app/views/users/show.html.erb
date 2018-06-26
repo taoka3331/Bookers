@@ -1,18 +1,17 @@
 <div class="container">
-     <div class="row">
+      <div class="row">
     	<div class="col-lg-3">
 
 			<%= render 'users/list', user: @user, book_new: @book_new %>
 		</div>
 
-        <div class="col-lg-9">
-          	<table class="table table-striped"> 
+          <div class="col-lg-9">
+          	<table class="table table-striped">
 				<h1>Books</h1>
 				<thead>
 					<tr>
-						    <th></th>
-							<th class="index-books-title">Title</th>
-							<th class="index-books-opinion">opinion</th>
+							<th>Title</th>
+							<th>opinion</th>
 							<th></th>
 							<th></th>
 							<th></th>
@@ -24,7 +23,6 @@
 					<% @books.each do |book| %>
 
 						<tr>
-							<td></td>
 							<td><%= book.title %></td>
 							<td><%= book.body %></td>
 						</tr>
@@ -34,5 +32,5 @@
 
 			</table>
 		</div>
-	 </div>
+	</div>
 </div>

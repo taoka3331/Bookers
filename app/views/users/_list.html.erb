@@ -1,0 +1,33 @@
+
+<h1>User info</h1>
+<p>
+  <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no-image.jpg" %>
+</p>
+<table class="table table-striped">
+    <thead>
+      <tr>name</tr>
+      <tr><%= current_user.name %></tr>
+	    <th><% if user == current_user.id %></th>
+        <td>intoroduction</td>
+
+        <p><%= link_to "編集",  edit_user_path(@user) %></p>
+    <% end %>
+    </thead>
+</table>
+
+
+
+<p> New book</p>
+
+
+<%= form_for(book_new) do |f| %>
+
+<p>Title</p>
+<%= f.text_field :title, class:"book_title"  %>
+<p>Opinion</p>
+<%= f.text_area :body, class:"book_body" %>
+
+<%= f.submit "Creat Book" %>
+
+<% end %>
+
