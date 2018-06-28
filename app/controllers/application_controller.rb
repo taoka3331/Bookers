@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
+ before_action :authenticate_user!, with: :exception,except: :top
 
- protect_from_forgery with: :exception
+ protect_from_forgery with: :exception,except: :destroy
  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -15,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-  	user_path(resource)
+  	top_path
   end
 end

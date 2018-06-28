@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   root to: 'books#top'
   get '/about' =>'books#about'
   get '/top' =>'books#top'
-  root 'users#show'
   get 'books/edit'
   delete '/books/:id'=> 'books#destroy', as: 'destroy_book'
 

@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-before_action :authenticate_user!
+
 
   def top
   end
@@ -14,6 +14,7 @@ before_action :authenticate_user!
 
   def show
   	@book = Book.find(params[:id])
+    @book_new =Book.new
   end
 
   def new
@@ -25,11 +26,11 @@ before_action :authenticate_user!
   	@book = Book.new(book_params)
   	@book.user_id =current_user.id
   if @book.save
-    flash[:success]
+    flash[:notice] ='success!'
     redirect_to book_path(@book.id)
   else
-    flash.now[:danger]
-    render new_book_path
+    flash.now[:notice]='danger'
+    render user_path
   end
   end
 
@@ -46,7 +47,7 @@ before_action :authenticate_user!
   def destroy
   	book =Book.find(params[:id])
   	book.destroy
-  	redirect_to new_book_path
+  	redirect_to books_path
   end
 
 
