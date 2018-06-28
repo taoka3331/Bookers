@@ -6,7 +6,7 @@ class User < ApplicationRecord
     attachment :profile_image
     has_many :books
 
-    validates :name,
-    length: {minimum: 2, maximum: 20}
+    validates :name,length: {minimum: 2, maximum: 20}
+    validates :intoroduce,length: {maximum: 50}
 end
 

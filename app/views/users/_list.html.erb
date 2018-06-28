@@ -1,17 +1,13 @@
-
 <h1>User info</h1>
 <p class="user-image">
-  <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no-image.jpg" %>
+  <%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no-image.jpg" %>
 </p>
 <table class="table table-striped">
     <thead>
-      <tr>name</tr>
-      <tr><%= current_user.name %></tr>
-	    <th><% if user == current_user.id %></th>
-        <td>intoroduction</td>
-
-        <p><%= link_to "編集",  edit_user_path(@user) %></p>
-    <% end %>
+      <tr><td>name<td><%= current_user.name %><% if user == current_user.id %>
+      <tr><td>intoroduction
+      <tr><td><%= link_to "編集",  edit_user_path(@user) %>
+      <% end %>
     </thead>
 </table>
 

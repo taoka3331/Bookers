@@ -32,7 +32,15 @@ header{
 	margin: 0 auto;
 }
 .nav navbar-nav navbar-righ{
+	height: 50px;
 	float: left;
     line-height: 50px;
 	margin: 0 auto;
+}
+.pull-left{
+	width: 100px;
+	height: 100px;
+}.user-image{
+	width: 120px;
+	height: 120px;
 }
