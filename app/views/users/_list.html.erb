@@ -4,17 +4,15 @@
 </p>
 <table class="table table-striped">
     <thead>
-      <tr><td>name<td><%= current_user.name %><% if user == current_user.id %>
-      <tr><td>intoroduction
-      <tr><td><%= link_to "編集",  edit_user_path(@user) %>
-      <% end %>
+      <tr><td>name</td><td><%= user.name %></td></tr>
+      <tr><th>intoroduction</th><th><%= user.intoroduce %></th></tr>
+      <tr><th><%= link_to "編集",  edit_user_path(user) %></th></tr>
     </thead>
 </table>
 
 
 
 <p> New book</p>
-
 
 <%= form_for(book_new) do |f| %>
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!, only: [:show]
+	before_action :authenticate_user!, only: [:show, :edit, :destroy]
 
   def create
     @user = User.new(user_params)
@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     else
      flash.now[:danger] ='error'
      render :new
+    end
   end
-  end
-  
+
   def index
   	@users = User.all
   	@user = current_user.id
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   	@books = @user.books
   	@book_new =Book.new
   end
+
   def edit
   	@user = User.find(params[:id])
   end
@@ -36,6 +37,6 @@ class UsersController < ApplicationController
 
   private 
     def user_params
-    params.require(:user).permit(:name, :profile_image)
+    params.require(:user).permit(:name, :profile_image, :intoroduce)
     end
 end
