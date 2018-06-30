@@ -10,6 +10,7 @@
 				<h1>Books</h1>
 				<thead>
 					<tr>
+							<th></th>
 							<th>Title</th>
 							<th>opinion</th>
 							<th></th>
@@ -23,6 +24,7 @@
 					<% @books.each do |book| %>
 
 						<tr>
+							<td><%= attachment_image_tag current_user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-circle pull-left profile-img", fallback: "no-image.jpg" %></td>
 							<td><%= book.title %></td>
 							<td><%= book.body %></td>
 						</tr>
