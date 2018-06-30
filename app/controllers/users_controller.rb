@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!, only: [:show, :edit, :destroy]
+	before_action :authenticate_user!, only: [:index, :show, :edit, :destroy]
 
   def create
     @user = User.new(user_params)
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def index
   	@users = User.all
-  	@user = current_user.id
+  	@user = current_user
   	@book_new =Book.new
   	@books = Book.all
   end
