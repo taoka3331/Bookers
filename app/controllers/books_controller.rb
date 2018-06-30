@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_book!, only: [:edit, :destroy]
+  before_action :authenticate_user!, only: [:edit, :destroy]
 
   def top
   end
@@ -31,7 +31,7 @@ class BooksController < ApplicationController
   	@book.user_id =current_user.id
   if @book.save
     flash[:notice] ='success!'
-    redirect_to books_path(@book.id)
+    redirect_to book_path(@book.id)
   else
     flash.now[:notice]='danger'
     render user_path
